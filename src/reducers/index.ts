@@ -1,4 +1,4 @@
-import from '../res/data/products'
+import {makeProduct} from '../res/data/products'
 
 const products = (state,action) => {
   switch (action.type) {
@@ -14,5 +14,5 @@ const products = (state,action) => {
 }
 
 
-export products;
+export default products;
 
