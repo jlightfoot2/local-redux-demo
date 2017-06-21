@@ -12,6 +12,7 @@
     "start": "webpack-dev-server"
   },
   "dependencies": {
+    "@types/material-ui": "^0.17.11",
     "@types/node": "^7.0.31",
     "babel-polyfill": "^6.23.0",
     "clean-webpack-plugin": "^0.1.16",
@@ -31,6 +32,7 @@
     "react-router-dom": "^4.1.1",
     "react-tap-event-plugin": "^2.0.1",
     "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0",
     "webpack-path-rewriter": "^1.1.4"
   },
   "devDependencies": {

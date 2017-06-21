@@ -33,9 +33,11 @@ const productsData = [
   makeProduct(9,'Dune Buggy',12000),
   makeProduct(10,'Gift Card',20.00)
 ];
-export const defaultProduct = {};
-const normalizedProducts = normalize(productsData, productArraySchema);
-console.log(normalizedProducts);
+
+export const normalizedProducts = normalize(productsData, productArraySchema);
+export const defaultProducts = normalizedProducts.entities.products;
+export const defaultProductIds = normalizedProducts.result;
+
 
 
 

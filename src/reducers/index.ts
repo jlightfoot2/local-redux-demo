@@ -1,6 +1,20 @@
-import {makeProduct} from '../res/data/products'
+import {makeProduct, defaultProducts, defaultProductIds } from '../res/data/products';
+import {combineReducers} from 'redux';
+ 
+const products = (state = defaultProducts,action) => {
+  switch (action.type) {
+    case "value":
+      // code...
+      break;
+    
+    default:
+      // code...
+      break;
+  }
+  return state;
+}
 
-const products = (state,action) => {
+const productIds = (state = defaultProductIds,action) => {
   switch (action.type) {
     case "value":
       // code...
@@ -14,5 +28,10 @@ const products = (state,action) => {
 }
 
 
-export default products;
+const reducer = combineReducers({
+  products,
+  productIds
+})
+
+export default reducer;
 

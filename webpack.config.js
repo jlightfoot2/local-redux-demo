@@ -61,6 +61,9 @@ module.exports = {
 
     plugins: [
         new webpack.DefinePlugin({
+         'process.env': {
+            'NODE_ENV': JSON.stringify('dev')
+          },
           '__DEVTOOLS__': true,
           '__INCLUDE_SERVICE_WORKER__': false
         }),
