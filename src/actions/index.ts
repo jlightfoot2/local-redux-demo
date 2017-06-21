@@ -1,12 +1,12 @@
 import {ProductInterface} from '../res/data/products';
 import {nextId} from './_helper';
-const EDIT_PRODUCT = 'T2.EDIT_PRODUCT';
-const DELETE_PRODUCT = 'T2.DELETE_PRODUCT';
+export const UPDATE_PRODUCT = 'T2.UPDATE_PRODUCT';
+export const DELETE_PRODUCT = 'T2.DELETE_PRODUCT';
 
 
 export const updateProduct = (product:ProductInterface) => {
   return {
-    type: EDIT_PRODUCT,
+    type: UPDATE_PRODUCT,
     product
   }
 }

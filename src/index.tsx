@@ -15,6 +15,10 @@ injectTapEventPlugin();
 
 const store = createStore(reducer,applyMiddleware(thunk));
 
+store.subscribe(() => {
+    console.log(store.getState()); // list entire state of app
+});
+
 const render = (Component: any) => {
     ReactDOM.render(
         <AppContainer>

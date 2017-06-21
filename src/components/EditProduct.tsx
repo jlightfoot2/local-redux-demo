@@ -9,9 +9,9 @@ export interface BasicProduct {
 }
 
 export interface Props {
-  product?: BasicProduct
+  product: BasicProduct
   editProduct(product: BasicProduct): void;
-  realtime: boolean;
+  realtime?: boolean;
 }
 
 export interface State {
@@ -22,12 +22,6 @@ export default class EditProduct extends React.Component<Props, State>{
 
 
   public static defaultProps: Partial<Props> = {
-     product: {
-       id: 0, 
-       title: '',
-       description:'',
-       price: 0
-     },
      realtime: false
   }
 
@@ -44,7 +38,7 @@ export default class EditProduct extends React.Component<Props, State>{
     return (event) => {
       const fieldValue = event.target.value;
       const product = {...this.state.product, [fieldName]: fieldValue};
-      if(realtime && product.id){
+      if(this.canUpdateRealTime()){
         editProduct(product);
       } else {
         this.setState({
@@ -58,6 +52,9 @@ export default class EditProduct extends React.Component<Props, State>{
     event.preventDefault();
     const {editProduct} = this.props;
     editProduct(this.state.product);
+    this.setState({
+      product: this.props.product
+    });
   }
 
   componentWillReceiveProps(nextProps){
@@ -76,6 +73,7 @@ export default class EditProduct extends React.Component<Props, State>{
   render(){
     const {realtime} = this.props;
     const {product} = this.state;
+    console.log(product);
     const productTitle = product.id ? 'Edit Product' : 'Add Product';
     return <div>
              <h2>{productTitle}</h2>
