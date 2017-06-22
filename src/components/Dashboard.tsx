@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import ProductsCatalog from '../containers/ProductsCatalog';
 import FavoritesList from '../containers/FavoritesList';
 export interface Props {
@@ -20,7 +19,7 @@ export default class Dashboard extends React.Component<Props, State>{
   render(){
 
     return <div style={{position: 'relative'}}>
-    
+
               <div style={{float: 'left'}} >
                 <ProductsCatalog />
               </div>

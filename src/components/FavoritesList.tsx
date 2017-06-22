@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import ProductView from '../components/ProductView';
 import {ProductInterface} from '../res/data/products';
 export interface Props {

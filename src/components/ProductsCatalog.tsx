@@ -1,9 +1,8 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import EditProductContainer from '../containers/EditProduct';
 import ProductView from '../components/ProductView';
 import EditProduct from '../containers/EditProduct';
 import {ProductInterface} from '../res/data/products';
+
 export interface Props {
   products:ProductInterface[];
   addFavorite(product: ProductInterface): void;

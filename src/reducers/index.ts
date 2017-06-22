@@ -1,4 +1,4 @@
-import {makeProduct, defaultProducts, defaultProductIds } from '../res/data/products';
+import {defaultProducts, defaultProductIds } from '../res/data/products';
 import {combineReducers} from 'redux';
 import {arrayPushUnique,arrayRemove} from './_helper';
 import {
@@ -45,6 +45,9 @@ const favoriteIds = (state = [],action) => {
       state = arrayPushUnique(action.id,state);
       break;
     case REMOVE_PRODUCT_FAVORITES:
+      state = arrayRemove(action.id,state);
+      break;
+    case DELETE_PRODUCT:
       state = arrayRemove(action.id,state);
       break;
   }

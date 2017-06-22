@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 
 export interface BasicProduct {
   id: number;
@@ -44,7 +43,7 @@ export default class EditProduct extends React.Component<Props, State>{
 
 
   handleProductUpdate = (updatedProduct: BasicProduct) => {
-    const {editProduct,realtime} = this.props;
+    const {editProduct} = this.props;
     if(this.canUpdateRealTime()){
       editProduct(updatedProduct);
     } else {
@@ -81,7 +80,6 @@ export default class EditProduct extends React.Component<Props, State>{
   }
 
   render(){
-    const {realtime} = this.props;
     const {product} = this.state;
     const productTitle = product.id ? product.title : 'Add Product';
     return <div style={{maxWidth: 300,border: '1px solid black',backgroundColor: 'white', padding: 5, margin: 5}} >

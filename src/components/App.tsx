@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import AppTheme from './AppTheme';
 import ProductsEdit from '../containers/ProductsEdit';
 import Home from './Home';

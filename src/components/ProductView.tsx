@@ -1,8 +1,6 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import EditProductContainer from '../containers/EditProduct';
 import {ProductInterface} from '../res/data/products';
-import EditProduct from '../containers/EditProduct';
+
 export interface Props {
   product:ProductInterface;
   bgColor?: string;

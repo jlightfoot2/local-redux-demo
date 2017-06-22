@@ -1,9 +1,10 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import EditProductContainer from '../containers/EditProduct';
 import {ProductInterface} from '../res/data/products';
 import EditProduct from '../containers/EditProduct';
 import ProductView from '../components/ProductView';
+
+
 export interface Props {
   products:ProductInterface[];
   remove(product: ProductInterface): void;
@@ -38,10 +39,12 @@ export default class ProductsEdit extends React.Component<Props, State>{
     const {remove} = this.props;
     const {activeEdit} = this.state;
     if(product.id === activeEdit){
+      
       return  <EditProduct product={product} realtime={true} key={product.id}>
                  <input type="button" value="Done" onClick={() => this.handleClearActive()} />
               </EditProduct>;
     } else {
+
       return <ProductView product={product}  key={product.id}>
 
                 <input type="button" value="Edit" onClick={() => this.handleSetActive(product.id)} />
@@ -54,7 +57,7 @@ export default class ProductsEdit extends React.Component<Props, State>{
   
   render(){
     const {products} = this.props;
-    const {activeEdit} = this.state;
+
     return <div>
               <h1>Products List</h1>
 
