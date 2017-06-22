@@ -35,9 +35,7 @@ export default class ProductsCatalog extends React.Component<Props, State>{
     let productsList = null;
     if(mode === 1){
 
-        productsList = products.map(product => {
-                          return  <EditProduct realtime={true} product={product} key={product.id} />
-                        })
+        productsList = products.map(product => <EditProduct realtime={true} product={product} key={product.id} />);
 
     } else {
 
