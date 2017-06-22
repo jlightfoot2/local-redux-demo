@@ -2,7 +2,8 @@ import {ProductInterface} from '../res/data/products';
 import {nextId} from './_helper';
 export const UPDATE_PRODUCT = 'T2.UPDATE_PRODUCT';
 export const DELETE_PRODUCT = 'T2.DELETE_PRODUCT';
-
+export const ADD_PRODUCT_FAVORITES = 'T2.ADD_PRODUCT_FAVORITES';
+export const REMOVE_PRODUCT_FAVORITES = 'T2.REMOVE_PRODUCT_FAVORITES';
 
 export const updateProduct = (product:ProductInterface) => {
   return {
@@ -27,3 +28,19 @@ export const deleteProduct = (id:number) => {
     id
   }
 }
+
+export const addProductFavorites = (id:number) => {
+  return {
+    type: ADD_PRODUCT_FAVORITES,
+    id
+  }
+}
+
+export const removeProductFavorites = (id:number) => {
+  return {
+    type: REMOVE_PRODUCT_FAVORITES,
+    id
+  }
+}
+
+

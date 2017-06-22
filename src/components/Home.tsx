@@ -13,6 +13,8 @@ export default class Home extends React.Component<Props, State>{
 
   render(){
 
-    return <div>Home Page</div>;
+    return <div>
+      <h2>Welcome</h2>
+    </div>;
   }
 }

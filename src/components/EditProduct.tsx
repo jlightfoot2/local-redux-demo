@@ -34,27 +34,37 @@ export default class EditProduct extends React.Component<Props, State>{
   }
 
   handleTextChange = (fieldName) => {
-    const {editProduct,realtime} = this.props;
     return (event) => {
       const fieldValue = event.target.value;
       const product = {...this.state.product, [fieldName]: fieldValue};
-      if(this.canUpdateRealTime()){
-        editProduct(product);
-      } else {
-        this.setState({
-          product: product
-        })
-      }
+      this.handleProductUpdate(product);
+    }
+  }
+
+
+
+  handleProductUpdate = (updatedProduct: BasicProduct) => {
+    const {editProduct,realtime} = this.props;
+    if(this.canUpdateRealTime()){
+      editProduct(updatedProduct);
+    } else {
+      this.setState({
+        product: updatedProduct
+      });
     }
   }
 
   handleSubmit = (event) => {
+
     event.preventDefault();
+
     const {editProduct} = this.props;
     editProduct(this.state.product);
-    this.setState({
-      product: this.props.product
-    });
+    if(!this.props.product.id){ //if we are submitting a new product then reset
+      this.setState({
+        product: this.props.product
+      })
+    }
   }
 
   componentWillReceiveProps(nextProps){
@@ -73,9 +83,8 @@ export default class EditProduct extends React.Component<Props, State>{
   render(){
     const {realtime} = this.props;
     const {product} = this.state;
-    console.log(product);
-    const productTitle = product.id ? 'Edit Product' : 'Add Product';
-    return <div>
+    const productTitle = product.id ? product.title : 'Add Product';
+    return <div style={{maxWidth: 300,border: '1px solid black',backgroundColor: 'white', padding: 5, margin: 5}} >
              <h2>{productTitle}</h2>
              <form onSubmit={this.handleSubmit}>
 
@@ -86,10 +95,30 @@ export default class EditProduct extends React.Component<Props, State>{
                  </label>
                </div>
 
+
+
                <div>
-                 {!this.canUpdateRealTime() && <input type="submit" value="Submit" />}
+                 <label>
+                   Price <br />
+                   <input type="text" onChange={this.handleTextChange('price')} value={product.price} />
+                 </label>
                </div>
 
+               <div>
+                 <label>
+                   Description <br />
+                   <input type="text" onChange={this.handleTextChange('description')} value={product.description} />
+                 </label>
+               </div>
+
+               <div style={{padding: 10}}>
+                 <div>
+                   {!this.canUpdateRealTime() && <input type="submit" value="Submit" />}
+                 </div>
+                 <div>
+                   {this.props.children}
+                 </div>
+               </div>
              </form>
           </div>;
   }
