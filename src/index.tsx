@@ -12,6 +12,8 @@ import App from './components/App';
 import reducer from './reducers';
 import {inspect} from 'util';
 
+require('./index.html'); //make sure to emit index.html to dist/
+
 injectTapEventPlugin();
 
 /**

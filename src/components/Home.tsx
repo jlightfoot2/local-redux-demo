@@ -13,7 +13,7 @@ export default class Home extends React.Component<Props, State>{
   render(){
 
     return <div>
-      <h2>Reduc Demo</h2>
+      <h2>Redux Demo</h2>
       <h3>Modules</h3>
       <div>react</div>
       <div>redux</div>
