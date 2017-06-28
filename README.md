@@ -6,7 +6,6 @@ These "key areas" are shown below.
 
 ## run demo
 
-
 `yarn start`
 
 or
