@@ -10,7 +10,7 @@ export interface State {
  
 }
 
-export default class ProductsCatalog extends React.Component<Props, State>{
+export default class FavoritesList extends React.Component<Props, State>{
 
   constructor(props){
     super(props);

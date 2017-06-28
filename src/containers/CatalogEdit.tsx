@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import ProductsEditComponent from '../components/ProductsEdit';
+import CatalogEditComponent from '../components/CatalogEdit';
 import {ProductInterface} from '../res/data/products';
 import {deleteProduct} from '../actions';
 
@@ -18,4 +18,4 @@ const dispatchToProps = (dispatch,ownProps) => {
   }
 }
 
-export default connect(stateToProps,dispatchToProps)(ProductsEditComponent);
+export default connect(stateToProps,dispatchToProps)(CatalogEditComponent);

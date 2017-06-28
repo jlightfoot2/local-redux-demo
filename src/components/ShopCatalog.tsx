@@ -1,5 +1,5 @@
 import * as React from 'react';
-import ProductsCatalog from '../containers/ProductsCatalog';
+import ProductsList from '../containers/ProductsList';
 import FavoritesList from '../containers/FavoritesList';
 export interface Props {
 
@@ -9,7 +9,7 @@ export interface State {
   
 }
 
-export default class Dashboard extends React.Component<Props, State>{
+export default class ShopCatalog extends React.Component<Props, State>{
   componentDidMount(){
     /*
     (require as any).ensure([],(require) => {
@@ -21,11 +21,15 @@ export default class Dashboard extends React.Component<Props, State>{
     return <div style={{position: 'relative'}}>
 
               <div style={{float: 'left'}} >
-                <ProductsCatalog />
+
+                <ProductsList />
+             
               </div>
 
               <div style={{position: 'absolute', top: 0, right: 50}} >
+
                 <FavoritesList />
+
               </div>
               
            </div>;

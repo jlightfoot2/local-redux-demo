@@ -12,7 +12,7 @@ export interface State {
   mode: number; //0: view, 1: edit
 }
 
-export default class ProductsCatalog extends React.Component<Props, State>{
+export default class ProductsList extends React.Component<Props, State>{
 
   constructor(props){
     super(props);
@@ -42,10 +42,11 @@ export default class ProductsCatalog extends React.Component<Props, State>{
                           return  <ProductView bgColor={'#3CB371'} product={product} key={product.id}>
                                     <input type="button" onClick={() => addFavorite(product)} value="Favorite" />
                                   </ProductView>;
-                        })
+                        });
+
     }
 
-    const buttonText = mode ? "Save" : "Edit";
+    const buttonText = mode ? "Done" : "Edit";
 
     return <div>
               <h1>Catalog <input onClick={() => this.toggleEdit()} type="button" value={buttonText} /></h1>

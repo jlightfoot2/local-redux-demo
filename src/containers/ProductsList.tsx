@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import ProductsCatalogComponent from '../components/ProductsCatalog';
+import ProductsListComponent from '../components/ProductsList';
 import {ProductInterface} from '../res/data/products';
 import {addProductFavorites} from '../actions';
 
@@ -60,6 +60,6 @@ const dispatchToProps = (dispatch,ownProps) => {
  * 
  */
 
-export default connect(stateToProps,dispatchToProps)(ProductsCatalogComponent);
+export default connect(stateToProps,dispatchToProps)(ProductsListComponent);
 
 

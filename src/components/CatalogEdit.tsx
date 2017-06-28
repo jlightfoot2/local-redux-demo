@@ -14,7 +14,7 @@ export interface State {
   activeEdit: number;
 }
 
-export default class ProductsEdit extends React.Component<Props, State>{
+export default class CatalogEdit extends React.Component<Props, State>{
 
   constructor(props){
     super(props);

@@ -5,7 +5,7 @@ import IconButton from 'material-ui/IconButton';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/menu';
 import { Link } from 'react-router-dom';
 
-const LeftMenu = () => {
+const LeftMenuIcon = () => {
   return (
     <IconMenu
       iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
@@ -20,4 +20,4 @@ const LeftMenu = () => {
 }
 
 
-export default LeftMenu;
+export default LeftMenuIcon;

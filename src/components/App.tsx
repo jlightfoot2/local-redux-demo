@@ -1,8 +1,8 @@
 import * as React from 'react';
 import AppTheme from './AppTheme';
-import ProductsEdit from '../containers/ProductsEdit';
+import CatalogEdit from '../containers/CatalogEdit';
 import Home from './Home';
-import Dashboard from './Dashboard';
+import ShopCatalog from './ShopCatalog';
 import LeftMenuIcon from './LeftMenuIcon';
 import { Route } from 'react-router-dom';
 
@@ -13,8 +13,8 @@ const RouteTest = () => (
 
     <div style={{padding: '10px'}}>
       
-      <Route path="/products" component={ProductsEdit} />
-      <Route path="/shop" component={Dashboard} />
+      <Route path="/products" component={CatalogEdit} />
+      <Route path="/shop" component={ShopCatalog} />
       <Route exact path="/" component={Home} />
 
     </div>
